@@ -1,10 +1,13 @@
+
 package com.example.kiemtra_laptrinhungdungdidong_2274802010174_buibaminhdang
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,8 +45,12 @@ class MainActivity : AppCompatActivity() {
 
                 else -> {
                     tvStatus.text = "Xác thực thành công!"
+
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.putExtra("USER_EMAIL", email)
+                    startActivity(intent)
+                }
                 }
             }
         }
     }
-}
